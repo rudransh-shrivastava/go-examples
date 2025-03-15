@@ -19,14 +19,14 @@ type TimeVal struct {
 }
 
 func main() {
-	// Use `ls /dev/input/by-id/*` to find mouse device
+	// Use `la /dev/input/by-id/*` to find mouse device
 	// For me, the output was
 	// 	lrwxrwxrwx 1 root root 9 Feb 19 22:37 usb-Logitech_USB_Receiver-if01-event-kbd -> ../event6
 	// lrwxrwxrwx 1 root root 9 Feb 19 22:37 usb-Logitech_USB_Receiver-if01-event-mouse -> ../event5
 	// lrwxrwxrwx 1 root root 9 Feb 19 22:37 usb-Logitech_USB_Receiver-if01-mouse -> ../mouse2
 	// the mouse is event5
 
-	devicePath := "/dev/input/event5"
+	devicePath := "/dev/input/event4"
 
 	f, err := os.Open(devicePath)
 	if err != nil {
