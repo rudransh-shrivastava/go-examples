@@ -26,7 +26,7 @@ func main() {
 	// lrwxrwxrwx 1 root root 9 Feb 19 22:37 usb-Logitech_USB_Receiver-if01-mouse -> ../mouse2
 	// the mouse is event5
 
-	devicePath := "/dev/input/event4"
+	devicePath := "/dev/input/event5"
 
 	f, err := os.Open(devicePath)
 	if err != nil {
@@ -46,6 +46,7 @@ func main() {
 		// EV_REL (2) is for relative movement
 		// REL_X (0) is for x-axis movement
 		// REL_Y (1) is for y-axis movement
+
 		if event.Type == 2 { // EV_REL
 			switch event.Code {
 			case 0: // REL_X
